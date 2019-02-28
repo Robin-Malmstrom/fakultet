@@ -15,21 +15,21 @@ public class Fakultet {
 	public static void main(String[] args) {
 		int input = Integer.parseInt(JOptionPane.showInputDialog("Ange ett tal"));
 		
-		long startRec = System.nanoTime();
+		long start = System.nanoTime();
 		
 		long resultRec = facRec(input);
 		
-		long stopRec = System.nanoTime();
+		long stop = System.nanoTime();
 		
-		long nanoTimeRec = stopRec - startRec;
+		long nanoTimeRec = stop - start;
 		
-		long startIte = System.nanoTime();
+		start = System.nanoTime();
 		
 		long resultIte = facIte(input);
 		
-		long stopIte = System.nanoTime();
+		stop = System.nanoTime();
 		
-		long nanoTimeIte = stopIte - startIte;
+		long nanoTimeIte = stop - start;
 		
 		JOptionPane.showMessageDialog(null, 
 			"Resultat rekursion: " + resultRec + "\n" +
@@ -39,6 +39,7 @@ public class Fakultet {
 		, "Resultat", 1);
 	}
 	
+	//Returnerar fakulteten av ett tal med hjälp av rekursion
 	public static long facRec(int number) {
 		if(number == 2) {
 			return 2;
@@ -46,6 +47,7 @@ public class Fakultet {
 		return number * facRec(number - 1);
 	}
 	
+	//Returnerar fakulteten av ett tal med hjälp av iteration
 	public static long facIte(int number) {
 		long resIteration = 1;
 		
